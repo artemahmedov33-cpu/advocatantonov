@@ -151,15 +151,29 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .nav a:hover,.nav a.active{color:var(--gold);border-color:var(--gold)}
 .nav .nav-cta{padding:10px 22px}
 
-.hero{position:relative;background:linear-gradient(120deg,rgba(31,45,61,.94),rgba(31,45,61,.80)),url('images/nas_office_3.png');background-size:cover;background-position:center;color:#fff;padding:clamp(60px,9vw,96px) 0}
-.hero h1{color:#fff;font-size:clamp(28px,5vw,46px);max-width:780px;margin-bottom:18px}
-.hero p{font-size:clamp(15px,2.2vw,18px);max-width:640px;color:#d8e0ea;margin-bottom:22px}
-.hero .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
-.hero .chip{background:rgba(255,255,255,.10);border:1px solid rgba(227,201,135,.4);color:#f0e6cf;font-size:13px;padding:7px 13px;border-radius:999px}
-.hero .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.hero .badges{display:flex;gap:clamp(20px,4vw,40px);margin-top:46px;flex-wrap:wrap}
-.hero .badge b{display:block;font-size:clamp(24px,4vw,32px);color:var(--gold-soft);font-family:"Georgia",serif}
-.hero .badge span{font-size:14px;color:#c3cdd9}
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#ffffff,#eaeef3);color:var(--navy);padding:clamp(38px,5.5vw,68px) 0}
+.hero .container{display:grid;grid-template-columns:.9fr 1.12fr;gap:clamp(20px,3vw,44px);align-items:center}
+.hero h1{color:var(--navy);font-size:clamp(27px,4.2vw,43px);line-height:1.15;max-width:560px;margin-bottom:16px}
+.hero .lead{font-size:clamp(15px,2vw,18px);color:#5a6472;max-width:520px;margin-bottom:24px}
+.hero .lead b{color:var(--navy)}
+.hero-form{max-width:520px;margin-bottom:30px}
+.hero-form .fl{display:block;font-size:13px;font-weight:600;color:#7a838f;margin-bottom:8px}
+.hero-form .row{display:flex;gap:12px;flex-wrap:wrap}
+.hero-form input{flex:1 1 210px;min-width:0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;font-size:15px;font-family:inherit;background:#fff;color:var(--ink)}
+.hero-form input:focus{outline:none;border-color:var(--gold)}
+.hero-form .btn{white-space:nowrap}
+.hero-form .form-note{display:none;font-size:13px;color:#2ea44f;margin-top:10px}
+.hero-stats{display:flex;gap:clamp(20px,4vw,44px);flex-wrap:wrap}
+.hero-stats .st b{display:block;font-family:"Georgia",serif;font-size:clamp(25px,3.2vw,33px);color:var(--navy);line-height:1}
+.hero-stats .st span{display:block;margin-top:6px;font-size:13px;color:#6b7480;max-width:150px}
+.hero-card{position:relative;border-radius:20px;overflow:hidden;background:radial-gradient(120% 120% at 74% 8%,rgba(200,160,71,.24),rgba(200,160,71,0) 46%),linear-gradient(160deg,#2b3f55,#19242f);box-shadow:0 26px 60px rgba(27,40,58,.22);min-height:clamp(330px,34vw,440px);display:flex;align-items:flex-end;justify-content:center}
+.hero-card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22%;background:linear-gradient(to top,#19242f,rgba(25,36,47,0));z-index:2;pointer-events:none}
+.hero-card .duo{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:center;width:100%;padding:0 6px;transform:translateY(-6%)}
+.hero-card .duo img{display:block;height:auto;filter:drop-shadow(0 16px 30px rgba(0,0,0,.42))}
+.hero-card .duo .a{width:66%;max-width:480px;position:relative;z-index:1}
+.hero-card .duo .b{width:57%;max-width:420px;position:relative;z-index:2;margin-left:-9%}
+.hero-card .name-chip{position:absolute;top:16px;left:16px;z-index:3;background:rgba(255,255,255,.96);color:var(--navy);padding:9px 14px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.2);font-weight:700;font-size:13.5px;line-height:1.25}
+.hero-card .name-chip span{display:block;font-weight:500;font-size:10.5px;color:#6b7480;text-transform:uppercase;letter-spacing:.4px;margin-top:2px}
 
 /* trust strip */
 .trust{background:var(--white);border-bottom:1px solid var(--line)}
@@ -170,12 +184,34 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .trust .titem span{font-size:13px;color:var(--muted)}
 
 .services{background:var(--white)}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.card{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:.22s}
+.cards{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 2px 18px;scrollbar-width:none;-ms-overflow-style:none}
+.cards::-webkit-scrollbar{display:none}
+.cards .reveal,.card.reveal{opacity:1;transform:none}
+.card{flex:0 0 280px;scroll-snap-align:start;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.22s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--gold-soft)}
-.card .ic{width:48px;height:48px;border-radius:11px;background:var(--navy);color:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
-.card h3{font-size:18px;margin-bottom:7px}
-.card p{font-size:13.5px;color:var(--muted)}
+.card .ic{width:100%;height:140px;margin:0 0 14px;flex-shrink:0;overflow:hidden;background:var(--navy)}
+.card .ic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.card:hover .ic img{transform:scale(1.05)}
+.card h3{font-size:17px;margin:0 22px 7px}
+.card p{font-size:13.5px;color:var(--muted);margin:0 22px 22px}
+.card:nth-child(6n+1) .ic{background:linear-gradient(135deg,#243449,#3d597b)}
+.card:nth-child(6n+2) .ic{background:linear-gradient(135deg,#6a5220,#c8a047)}
+.card:nth-child(6n+3) .ic{background:linear-gradient(135deg,#254a43,#3f8577)}
+.card:nth-child(6n+4) .ic{background:linear-gradient(135deg,#4a2f2f,#956054)}
+.card:nth-child(6n+5) .ic{background:linear-gradient(135deg,#2d3a52,#59709e)}
+.card:nth-child(6n+6) .ic{background:linear-gradient(135deg,#3a2f4d,#6d5c8a)}
+.services-wrap{position:relative}
+.services-hint{display:flex;align-items:center;justify-content:center;gap:8px;color:var(--muted);font-size:14px;margin:-18px 0 20px}
+.services-hint .ar{color:var(--gold);font-weight:700;animation:swipeHint 1.3s ease-in-out infinite}
+@keyframes swipeHint{0%,100%{transform:translateX(0)}50%{transform:translateX(7px)}}
+.svc-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:22px}
+.scroll-btn{flex:0 0 auto;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--navy);font-size:26px;line-height:1;cursor:pointer;box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center;transition:.2s;padding:0}
+.scroll-btn:hover{background:var(--gold);color:#fff;border-color:var(--gold);transform:translateY(-2px)}
+.cards{cursor:grab}
+.cards.dragging{cursor:grabbing;user-select:none;scroll-snap-type:none}
+.svc-slider{flex:0 1 240px;height:6px;margin:0;background:var(--line);border-radius:99px;position:relative;cursor:pointer;touch-action:none}
+.svc-thumb{position:absolute;top:0;left:0;height:100%;width:30%;background:var(--gold);border-radius:99px}
+@media(max-width:860px){.svc-slider{flex:0 1 150px}}
 
 /* how we work */
 .process{background:var(--bg)}
@@ -240,6 +276,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 .cinfo li{list-style:none;display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)}
 .cinfo .ci{font-size:20px;color:var(--gold-soft);width:26px;flex-shrink:0}
+.cinfo .ci svg{width:23px;height:23px;display:block;stroke:var(--gold-soft);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .cinfo b{display:block;color:#fff}
 .cinfo span{color:#aeb9c6;font-size:14px}
 .cinfo a{color:#fff}
@@ -283,6 +320,17 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .mobile-bar{display:none}
 .mobile-nav{display:none}
 
+@media(max-width:860px){
+  .hero .container{grid-template-columns:1fr;gap:26px}
+  .hero-copy{text-align:center}
+  .hero h1,.hero .lead{margin-left:auto;margin-right:auto}
+  .hero-form{margin-left:auto;margin-right:auto}
+  .hero-form .row{justify-content:center}
+  .hero-stats{justify-content:center;gap:24px 34px}
+  .hero-card{min-height:280px}
+  .hero-card .duo .a{width:72%}
+  .hero-card .duo .b{width:62%}
+}
 @media(max-width:980px){
   .trust .container{grid-template-columns:repeat(2,1fr)}
   .cards{grid-template-columns:repeat(2,1fr)}
@@ -373,20 +421,29 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 
 <main>
 <section class="hero" id="hero"><div class="container">
-  <h1>Квалифицированная юридическая помощь в любой ситуации</h1>
-  <p>Защита по уголовным, гражданским, семейным и административным делам. Более 23 лет успешной адвокатской практики в судах всех инстанций Волгограда и области.</p>
-  <div class="chips">
-    <span class="chip">Адвокатское соглашение</span>
-    <span class="chip">Оплата по документам</span>
-    <span class="chip">Работаем пн–вс</span>
-    <span class="chip">Выезд в суд</span>
+  <div class="hero-copy">
+    <h1>Квалифицированная юридическая помощь в Волгограде</h1>
+    <p class="lead">Защита по уголовным, гражданским, семейным и административным делам. Более 23 лет практики в судах всех инстанций. Получите <b>бесплатную консультацию</b> — перезвоним в ближайшее время.</p>
+    <form class="hero-form js-lead">
+      <label class="fl" for="hero-phone">Телефон для связи</label>
+      <div class="row">
+        <input id="hero-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+        <button class="btn btn-gold" type="submit">Получить консультацию</button>
+      </div>
+      <p class="form-note">Спасибо! Заявка отправлена — адвокат скоро перезвонит.</p>
+    </form>
+    <div class="hero-stats">
+      <div class="st"><b>23+</b><span>года практики</span></div>
+      <div class="st"><b>4,2★</b><span>рейтинг Яндекс</span></div>
+      <div class="st"><b>0 ₽</b><span>первая консультация</span></div>
+    </div>
   </div>
-  <div class="hero-actions"><a class="btn btn-gold" href="#contacts">Бесплатная консультация</a><a class="btn btn-ghost" href="#services">Наши услуги</a></div>
-  <div class="badges">
-    <div class="badge"><b>23+</b><span>года практики</span></div>
-    <div class="badge"><b>4,2★</b><span>рейтинг на Яндекс Картах</span></div>
-    <div class="badge"><b>26</b><span>направлений работы</span></div>
-    <div class="badge"><b>0 ₽</b><span>первая консультация</span></div>
+  <div class="hero-card">
+    <span class="name-chip">Виктор и Илья Антоновы<span>Адвокаты · уголовные и гражданские дела</span></span>
+    <div class="duo">
+      <img class="a" src="images/ok.png" alt="Адвокат Виктор Павлович Антонов" width="1781" height="1414" fetchpriority="high">
+      <img class="b" src="images/i1.png" alt="Адвокат Илья Викторович Антонов" width="800" height="793" fetchpriority="high">
+    </div>
   </div>
 </div></section>
 
@@ -400,33 +457,40 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 <section class="services" id="services"><div class="container">
   <h2 class="section-title reveal">Чем мы можем Вам помочь</h2>
   <p class="section-sub reveal">Ведём дела любой сложности по 26 направлениям — от консультации до полного судебного представительства</p>
-  <div class="cards">
-    <div class="card reveal"><div class="ic" aria-hidden="true">⚖️</div><h3>Уголовные дела</h3><p>Защита на следствии и в судах всех инстанций, включая суды присяжных: мошенничество (ст. 159), кража (ст. 158), наркотики (ст. 228, 228.1), убийство (ст. 105), тяжкий вред (ст. 111), взяточничество, грабёж, разбой, вымогательство, оружие, ДТП со смертью (ст. 264).</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🛒</div><h3>Защита прав потребителей</h3><p>Взыскание стоимости некачественного товара, неустойки, штрафа и морального вреда. Возврат денег при недостоверной информации или просрочке. Отказ от товара дистанционно (Wildberries, Ozon, Yandex.Market). Споры по подряду и услугам.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">👪</div><h3>Семейные дела</h3><p>Взыскание и изменение алиментов, расторжение брака, лишение и ограничение родительских прав, оспаривание отцовства, определение места жительства ребёнка и порядка общения, алименты на нетрудоспособных членов семьи.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">📜</div><h3>Наследственные дела</h3><p>Восстановление срока принятия наследства, установление факта принятия, признание права собственности, оспаривание завещаний и долгов наследодателя, обязательная доля, раздел наследства, признание наследника недостойным.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🏠</div><h3>Жилищные споры</h3><p>Признание права собственности, вселение и выселение, снятие с регистрационного учёта, оспаривание начислений, раздел лицевых счетов, оспаривание решений собраний собственников, ТСЖ и УК, раздел жилья.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🏗️</div><h3>Споры с застройщиком (ДДУ)</h3><p>Взыскание неустойки, морального вреда и штрафа, признание права собственности на объект, оспаривание одностороннего акта, отказ от договора при просрочке, взыскание стоимости непереданной площади.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🚗</div><h3>Автотематика и ДТП</h3><p>Признание права собственности на авто, виндикация, оспаривание сделок и штрафов ГИБДД, защита от лишения прав, возмещение по ОСАГО и КАСКО, защита виновника ДТП, исключение авто из описи приставов.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🌍</div><h3>Туризм</h3><p>Взыскание стоимости некачественной путёвки, морального вреда и штрафа, возврат денег с турагента при пороках договора, взыскание убытков за ненадлежащую информацию о маршруте и трансфере.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🌳</div><h3>Земельные споры, ДНП и СНТ</h3><p>Установление границ участков, раздел земли, определение порядка пользования, установление сервитута, выдел доли в натуре, оспаривание протоколов собраний садоводов и незаконных начислений.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🛡️</div><h3>Защита чести и достоинства</h3><p>Признание сведений не соответствующими действительности, компенсация морального вреда за оскорбления в соцсетях и чатах, удаление порочащей информации, защита деловой репутации.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">💰</div><h3>Займы и кредитные договоры</h3><p>Взыскание суммы займа и процентов по расписке, оспаривание неустоек и штрафных санкций по кредитным договорам, оспаривание самих договоров займа.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🩹</div><h3>Причинение вреда (деликт)</h3><p>Возмещение вреда здоровью и имуществу при ДТП, драках, падении льдин. Компенсации по потере кормильца, взыскание вреда при производственных травмах, компенсации участникам и родственникам СВО.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">📋</div><h3>Страховые споры</h3><p>Выплаты, оспаривание и расчёты по страхованию. Возврат страховой премии, возмещение при заливах и пожарах, выплаты наследникам, защита от требований страховых компаний.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🔑</div><h3>Защита собственности</h3><p>Иски о признании права собственности, виндикация вещи, устранение нарушений права, установление сервитута, возмещение ущерба при порче или гибели имущества.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">💸</div><h3>Неосновательное обогащение</h3><p>Взыскание ошибочно перечисленных денег, возврат средств, переведённых под влиянием мошенников, взыскание по расторгнутым договорам, оспаривание требований госорганов.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">📂</div><h3>Банкротные дела</h3><p>Заявление о признании должника банкротом, включение требований в реестр, защита должника при оспаривании сделок управляющим, защита директора от субсидиарной ответственности.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🏘️</div><h3>Недвижимость</h3><p>Сопровождение сделок и споров по объектам недвижимости, признание и защита прав, оформление и оспаривание прав собственности.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">📝</div><h3>Подготовка документов онлайн</h3><p>Подготовка исковых заявлений, жалоб и ходатайств дистанционно. Подготовка процессуальных документов любой сложности.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🎖️</div><h3>Защита прав военнослужащих</h3><p>Оспаривание решений жилищных комиссий воинских частей об отказе в предоставлении жилья и иные споры военнослужащих.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🏦</div><h3>Защита вкладчиков</h3><p>Взыскание убытков, причинённых мошенниками, в том числе со Сбербанка и иных банков.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🧾</div><h3>Судебные расходы</h3><p>Взыскание расходов на оплату услуг представителя в суде с проигравшей стороны.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🕊️</div><h3>Ритуальные услуги</h3><p>Признание ответственным за захоронение и связанные с этим споры.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🚙</div><h3>Дела по ОСАГО и КАСКО</h3><p>Взыскание страхового возмещения, оспаривание размера выплат, взыскание разницы с виновника ДТП.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🏛️</div><h3>Приватизация</h3><p>Приватизация квартиры, в том числе при смерти нанимателя по договору соцнайма, оспаривание отказа в приватизации.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">🔗</div><h3>Междисциплинарные споры</h3><p>Защита потерпевших по делам с гражданским иском, защита по заказным делам о вымогательстве, защита госслужащих по коррупционным искам прокуратуры.</p></div>
-    <div class="card reveal"><div class="ic" aria-hidden="true">📑</div><h3>Процессуальные документы</h3><p>Подготовка исковых заявлений, апелляционных и кассационных жалоб, ходатайств и иных процессуальных документов.</p></div>
+  <p class="services-hint reveal"><span aria-hidden="true">👉</span> Пролистайте вправо, чтобы увидеть все 26 направлений <span class="ar" aria-hidden="true">→</span></p>
+  <div class="services-wrap">
+    <div class="cards" id="svcScroller">
+    <div class="card reveal"><div class="ic"><img src="images/services/crime.jpg" alt="" loading="lazy"></div><h3>Уголовные дела</h3><p>Защита на следствии и в судах всех инстанций, включая суды присяжных: мошенничество (ст. 159), кража (ст. 158), наркотики (ст. 228, 228.1), убийство (ст. 105), тяжкий вред (ст. 111), взяточничество, грабёж, разбой, вымогательство, оружие, ДТП со смертью (ст. 264).</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/consult.jpg" alt="" loading="lazy"></div><h3>Защита прав потребителей</h3><p>Взыскание стоимости некачественного товара, неустойки, штрафа и морального вреда. Возврат денег при недостоверной информации или просрочке. Отказ от товара дистанционно (Wildberries, Ozon, Yandex.Market). Споры по подряду и услугам.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/family.jpg" alt="" loading="lazy"></div><h3>Семейные дела</h3><p>Взыскание и изменение алиментов, расторжение брака, лишение и ограничение родительских прав, оспаривание отцовства, определение места жительства ребёнка и порядка общения, алименты на нетрудоспособных членов семьи.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/books.jpg" alt="" loading="lazy"></div><h3>Наследственные дела</h3><p>Восстановление срока принятия наследства, установление факта принятия, признание права собственности, оспаривание завещаний и долгов наследодателя, обязательная доля, раздел наследства, признание наследника недостойным.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/house.jpg" alt="" loading="lazy"></div><h3>Жилищные споры</h3><p>Признание права собственности, вселение и выселение, снятие с регистрационного учёта, оспаривание начислений, раздел лицевых счетов, оспаривание решений собраний собственников, ТСЖ и УК, раздел жилья.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/construction.jpg" alt="" loading="lazy"></div><h3>Споры с застройщиком (ДДУ)</h3><p>Взыскание неустойки, морального вреда и штрафа, признание права собственности на объект, оспаривание одностороннего акта, отказ от договора при просрочке, взыскание стоимости непереданной площади.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/car.jpg" alt="" loading="lazy"></div><h3>Автотематика и ДТП</h3><p>Признание права собственности на авто, виндикация, оспаривание сделок и штрафов ГИБДД, защита от лишения прав, возмещение по ОСАГО и КАСКО, защита виновника ДТП, исключение авто из описи приставов.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/travel.jpg" alt="" loading="lazy"></div><h3>Туризм</h3><p>Взыскание стоимости некачественной путёвки, морального вреда и штрафа, возврат денег с турагента при пороках договора, взыскание убытков за ненадлежащую информацию о маршруте и трансфере.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/land.jpg" alt="" loading="lazy"></div><h3>Земельные споры, ДНП и СНТ</h3><p>Установление границ участков, раздел земли, определение порядка пользования, установление сервитута, выдел доли в натуре, оспаривание протоколов собраний садоводов и незаконных начислений.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/legaloffice.jpg" alt="" loading="lazy"></div><h3>Защита чести и достоинства</h3><p>Признание сведений не соответствующими действительности, компенсация морального вреда за оскорбления в соцсетях и чатах, удаление порочащей информации, защита деловой репутации.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/piggy.jpg" alt="" loading="lazy"></div><h3>Займы и кредитные договоры</h3><p>Взыскание суммы займа и процентов по расписке, оспаривание неустоек и штрафных санкций по кредитным договорам, оспаривание самих договоров займа.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/injury.jpg" alt="" loading="lazy"></div><h3>Причинение вреда (деликт)</h3><p>Возмещение вреда здоровью и имуществу при ДТП, драках, падении льдин. Компенсации по потере кормильца, взыскание вреда при производственных травмах, компенсации участникам и родственникам СВО.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/umbrella.jpg" alt="" loading="lazy"></div><h3>Страховые споры</h3><p>Выплаты, оспаривание и расчёты по страхованию. Возврат страховой премии, возмещение при заливах и пожарах, выплаты наследникам, защита от требований страховых компаний.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/propertydoor.jpg" alt="" loading="lazy"></div><h3>Защита собственности</h3><p>Иски о признании права собственности, виндикация вещи, устранение нарушений права, установление сервитута, возмещение ущерба при порче или гибели имущества.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/coins.jpg" alt="" loading="lazy"></div><h3>Неосновательное обогащение</h3><p>Взыскание ошибочно перечисленных денег, возврат средств, переведённых под влиянием мошенников, взыскание по расторгнутым договорам, оспаривание требований госорганов.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/bankruptcy.jpg" alt="" loading="lazy"></div><h3>Банкротство</h3><p>Заявление о признании должника банкротом, включение требований в реестр, защита должника при оспаривании сделок управляющим, защита директора от субсидиарной ответственности.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/realty.jpg" alt="" loading="lazy"></div><h3>Недвижимость</h3><p>Сопровождение сделок и споров по объектам недвижимости, признание и защита прав, оформление и оспаривание прав собственности.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/laptop.jpg" alt="" loading="lazy"></div><h3>Подготовка документов онлайн</h3><p>Подготовка исковых заявлений, жалоб и ходатайств дистанционно. Подготовка процессуальных документов любой сложности.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/military2.jpg" alt="" loading="lazy"></div><h3>Защита прав военнослужащих</h3><p>Оспаривание решений жилищных комиссий воинских частей об отказе в предоставлении жилья и иные споры военнослужащих.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/bank.jpg" alt="" loading="lazy"></div><h3>Защита вкладчиков</h3><p>Взыскание убытков, причинённых мошенниками, в том числе со Сбербанка и иных банков.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/gavel.jpg" alt="" loading="lazy"></div><h3>Судебные расходы</h3><p>Взыскание расходов на оплату услуг представителя в суде с проигравшей стороны.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/candle.jpg" alt="" loading="lazy"></div><h3>Ритуальные услуги</h3><p>Признание ответственным за захоронение и связанные с этим споры.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/carkey.jpg" alt="" loading="lazy"></div><h3>Дела по ОСАГО и КАСКО</h3><p>Взыскание страхового возмещения, оспаривание размера выплат, взыскание разницы с виновника ДТП.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/newflat.jpg" alt="" loading="lazy"></div><h3>Приватизация</h3><p>Приватизация квартиры, в том числе при смерти нанимателя по договору соцнайма, оспаривание отказа в приватизации.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/justice2.jpg" alt="" loading="lazy"></div><h3>Междисциплинарные споры</h3><p>Защита потерпевших по делам с гражданским иском, защита по заказным делам о вымогательстве, защита госслужащих по коррупционным искам прокуратуры.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/folders.jpg" alt="" loading="lazy"></div><h3>Процессуальные документы</h3><p>Подготовка исковых заявлений, апелляционных и кассационных жалоб, ходатайств и иных процессуальных документов.</p></div>
+    </div>
+    <div class="svc-controls">
+      <button class="scroll-btn prev" type="button" aria-label="Листать услуги назад">‹</button>
+      <button class="scroll-btn next" type="button" aria-label="Листать услуги вперёд">›</button>
+    </div>
   </div>
 </div></section>
 
@@ -591,13 +655,13 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
   <p class="section-sub reveal">Возле ТРК «Европа Сити Молл», в здании отеля Hilton и Газпромбанка</p>
   <div class="cgrid">
     <ul class="cinfo reveal">
-      <li><span class="ci" aria-hidden="true">📍</span><div><b>Адрес</b><span>г. Волгоград, пр-кт Ленина 56А (7 этаж, оф. 16)</span></div></li>
-      <li><span class="ci" aria-hidden="true">🕒</span><div><b>Режим работы</b><span>пн–вс с 8:00 до 22:00</span></div></li>
-      <li><span class="ci" aria-hidden="true">📞</span><div><b><a href="tel:+79153702018">8 (915) 370-20-18</a> — Илья Викторович</b><span>гражданские и иные дела</span></div></li>
-      <li><span class="ci" aria-hidden="true">📞</span><div><b><a href="tel:+79610783102">8 (961) 078-31-02</a> — Виктор Павлович</b><span>уголовные и административные дела</span></div></li>
-      <li><span class="ci" aria-hidden="true">💬</span><div><b>Мессенджеры</b><span><a href="https://wa.me/79153702018" target="_blank" rel="noopener">WhatsApp</a> и <a href="https://t.me/advocati_antonovi" target="_blank" rel="noopener">Telegram</a> — ответим быстро</span></div></li>
+      <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s6.5-5.8 6.5-10.5A6.5 6.5 0 0 0 5.5 10.5C5.5 15.2 12 21 12 21z"/><circle cx="12" cy="10.3" r="2.4"/></svg></span><div><b>Адрес</b><span>г. Волгоград, пр-кт Ленина 56А (7 этаж, оф. 16)</span></div></li>
+      <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.2v5.1l3.2 1.9"/></svg></span><div><b>Режим работы</b><span>пн–вс с 8:00 до 22:00</span></div></li>
+      <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15.8 21a15 15 0 0 1-12.8-12.8 2 2 0 0 1 2-2.2h2.3a1 1 0 0 1 1 .82l.66 3a1 1 0 0 1-.29.92L9.3 12.1a12 12 0 0 0 4.6 4.6l1.36-1.36a1 1 0 0 1 .92-.29l3 .66a1 1 0 0 1 .82 1V19a2 2 0 0 1-2.2 2z"/></svg></span><div><b><a href="tel:+79153702018">8 (915) 370-20-18</a> — Илья Викторович</b><span>гражданские и иные дела</span></div></li>
+      <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15.8 21a15 15 0 0 1-12.8-12.8 2 2 0 0 1 2-2.2h2.3a1 1 0 0 1 1 .82l.66 3a1 1 0 0 1-.29.92L9.3 12.1a12 12 0 0 0 4.6 4.6l1.36-1.36a1 1 0 0 1 .92-.29l3 .66a1 1 0 0 1 .82 1V19a2 2 0 0 1-2.2 2z"/></svg></span><div><b><a href="tel:+79610783102">8 (961) 078-31-02</a> — Виктор Павлович</b><span>уголовные и административные дела</span></div></li>
+      <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 12a7.5 7.5 0 0 1-10.9 6.7L4 20l1.3-5.1A7.5 7.5 0 1 1 20.5 12z"/></svg></span><div><b>Мессенджеры</b><span><a href="https://wa.me/79153702018" target="_blank" rel="noopener">WhatsApp</a> и <a href="https://t.me/advocati_antonovi" target="_blank" rel="noopener">Telegram</a> — ответим быстро</span></div></li>
     </ul>
-    <form class="cform reveal" id="callbackForm">
+    <form class="cform reveal js-lead" id="callbackForm">
       <h3>Заказать обратный звонок</h3>
       <p class="lead">Адвокат перезвонит Вам и проконсультирует</p>
       <label for="cf-name">Ваше имя</label>
@@ -623,7 +687,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 <footer class="footer"><div class="container">
   <div class="fnav"><a href="#hero">Главная</a><a href="#services">Услуги</a><a href="#pricing">Цены</a><a href="#practice">Судебная практика</a><a href="#lawyers">Адвокаты</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a></div>
   <div class="fcontacts">г. Волгоград, пр-кт Ленина 56А · <a href="tel:+79153702018">8 (915) 370-20-18</a> · <a href="tel:+79610783102">8 (961) 078-31-02</a> · пн–вс 8:00–22:00</div>
-  <div>© 2007–2026 Адвокаты Антоновы, Волгоград. Все права на сайт защищены законодательством РФ.</div>
+  <div>© 2007–2026 Адвокаты Антоновы, Волгоград</div>
 </div></footer>
 
 <div class="fab">
@@ -652,14 +716,41 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
   // Close menu with Escape
   document.addEventListener("keydown",function(e){if(e.key==="Escape")setMenu(false);});
 
-  // Callback form (visual handler — no backend yet)
-  var form=document.getElementById("callbackForm");
-  if(form){form.addEventListener("submit",function(e){
-    e.preventDefault();
-    var note=document.getElementById("cf-note");
-    if(note)note.style.display="block";
-    form.querySelector("button[type=submit]").textContent="Заявка отправлена ✓";
-  });}
+  // Services carousel: buttons + drag-to-swipe
+  var svc=document.getElementById("svcScroller");
+  if(svc){
+    // arrow buttons
+    var step=function(){return Math.max(240,svc.clientWidth*0.85);};
+    document.querySelectorAll(".scroll-btn").forEach(function(b){
+      b.addEventListener("click",function(){
+        svc.scrollBy({left:(b.classList.contains("next")?1:-1)*step(),behavior:"smooth"});
+      });
+    });
+    // drag-to-swipe (mouse)
+    var mdown=false,sx=0,ssl=0;
+    svc.addEventListener("pointerdown",function(e){
+      if(e.pointerType!=="mouse")return;
+      mdown=true;sx=e.clientX;ssl=svc.scrollLeft;svc.classList.add("dragging");
+    });
+    window.addEventListener("pointermove",function(e){
+      if(!mdown)return;
+      e.preventDefault();
+      svc.scrollLeft=ssl-(e.clientX-sx);
+    });
+    function endDrag(){if(mdown){mdown=false;svc.classList.remove("dragging");}}
+    window.addEventListener("pointerup",endDrag);
+  }
+
+  // Lead forms (visual handler — no backend yet)
+  document.querySelectorAll("form.js-lead").forEach(function(form){
+    form.addEventListener("submit",function(e){
+      e.preventDefault();
+      var note=form.querySelector(".form-note");
+      if(note)note.style.display="block";
+      var btn=form.querySelector("button[type=submit]");
+      if(btn)btn.textContent="Заявка отправлена ✓";
+    });
+  });
 
   // Scroll reveal
   var els=document.querySelectorAll(".reveal");
