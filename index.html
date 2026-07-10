@@ -322,7 +322,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .mobile-nav{display:none}
 
 @media(max-width:860px){
-  .hero .container{grid-template-columns:1fr;gap:24px}
+  .hero{padding:16px 0 34px}
+  .hero .container{grid-template-columns:1fr;gap:22px}
   .hero-copy{text-align:center}
   .hero h1,.hero .lead{margin-left:auto;margin-right:auto}
   .hero-form{margin-left:auto;margin-right:auto}
@@ -345,6 +346,11 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
   body.menu-open .fab{opacity:0;pointer-events:none}
   /* desktop nav hidden, mobile bar shown */
   .nav{display:none}
+  /* compact header on mobile: brand already shown in sticky mobile-bar */
+  .topbar .container{padding:7px 24px}
+  .header .container{padding:12px 24px}
+  .header .brand{display:none}
+  .contacts-h{gap:10px 26px}
   .mobile-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:80;background:var(--navy);padding:12px 18px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
   .mobile-bar .mb-logo{font-family:"Georgia",serif;font-size:19px;color:var(--gold-soft);font-weight:700;letter-spacing:.3px}
   .mobile-bar .burger{display:flex;padding:6px}
@@ -467,16 +473,16 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
   <p class="services-hint reveal"><span aria-hidden="true">👉</span> Пролистайте вправо, чтобы увидеть все 26 направлений <span class="ar" aria-hidden="true">→</span></p>
   <div class="services-wrap">
     <div class="cards" id="svcScroller">
-    <div class="card reveal"><div class="ic"><img src="images/services/crime.jpg" alt="" loading="lazy"></div><h3>Уголовные дела</h3><p>Защита на следствии и в судах всех инстанций, включая суды присяжных: мошенничество (ст. 159), кража (ст. 158), наркотики (ст. 228, 228.1), убийство (ст. 105), тяжкий вред (ст. 111), взяточничество, грабёж, разбой, вымогательство, оружие, ДТП со смертью (ст. 264).</p></div>
-    <div class="card reveal"><div class="ic"><img src="images/services/consult.jpg" alt="" loading="lazy"></div><h3>Защита прав потребителей</h3><p>Взыскание стоимости некачественного товара, неустойки, штрафа и морального вреда. Возврат денег при недостоверной информации или просрочке. Отказ от товара дистанционно (Wildberries, Ozon, Yandex.Market). Споры по подряду и услугам.</p></div>
-    <div class="card reveal"><div class="ic"><img src="images/services/family.jpg" alt="" loading="lazy"></div><h3>Семейные дела</h3><p>Взыскание и изменение алиментов, расторжение брака, лишение и ограничение родительских прав, оспаривание отцовства, определение места жительства ребёнка и порядка общения, алименты на нетрудоспособных членов семьи.</p></div>
-    <div class="card reveal"><div class="ic"><img src="images/services/books.jpg" alt="" loading="lazy"></div><h3>Наследственные дела</h3><p>Восстановление срока принятия наследства, установление факта принятия, признание права собственности, оспаривание завещаний и долгов наследодателя, обязательная доля, раздел наследства, признание наследника недостойным.</p></div>
-    <div class="card reveal"><div class="ic"><img src="images/services/house.jpg" alt="" loading="lazy"></div><h3>Жилищные споры</h3><p>Признание права собственности, вселение и выселение, снятие с регистрационного учёта, оспаривание начислений, раздел лицевых счетов, оспаривание решений собраний собственников, ТСЖ и УК, раздел жилья.</p></div>
-    <div class="card reveal"><div class="ic"><img src="images/services/construction.jpg" alt="" loading="lazy"></div><h3>Споры с застройщиком (ДДУ)</h3><p>Взыскание неустойки, морального вреда и штрафа, признание права собственности на объект, оспаривание одностороннего акта, отказ от договора при просрочке, взыскание стоимости непереданной площади.</p></div>
-    <div class="card reveal"><div class="ic"><img src="images/services/car.jpg" alt="" loading="lazy"></div><h3>Автотематика и ДТП</h3><p>Признание права собственности на авто, виндикация, оспаривание сделок и штрафов ГИБДД, защита от лишения прав, возмещение по ОСАГО и КАСКО, защита виновника ДТП, исключение авто из описи приставов.</p></div>
-    <div class="card reveal"><div class="ic"><img src="images/services/travel.jpg" alt="" loading="lazy"></div><h3>Туризм</h3><p>Взыскание стоимости некачественной путёвки, морального вреда и штрафа, возврат денег с турагента при пороках договора, взыскание убытков за ненадлежащую информацию о маршруте и трансфере.</p></div>
-    <div class="card reveal"><div class="ic"><img src="images/services/land.jpg" alt="" loading="lazy"></div><h3>Земельные споры, ДНП и СНТ</h3><p>Установление границ участков, раздел земли, определение порядка пользования, установление сервитута, выдел доли в натуре, оспаривание протоколов собраний садоводов и незаконных начислений.</p></div>
-    <div class="card reveal"><div class="ic"><img src="images/services/legaloffice.jpg" alt="" loading="lazy"></div><h3>Защита чести и достоинства</h3><p>Признание сведений не соответствующими действительности, компенсация морального вреда за оскорбления в соцсетях и чатах, удаление порочащей информации, защита деловой репутации.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/crime.jpg" alt="" width="700" height="470" fetchpriority="high"></div><h3>Уголовные дела</h3><p>Защита на следствии и в судах всех инстанций, включая суды присяжных: мошенничество (ст. 159), кража (ст. 158), наркотики (ст. 228, 228.1), убийство (ст. 105), тяжкий вред (ст. 111), взяточничество, грабёж, разбой, вымогательство, оружие, ДТП со смертью (ст. 264).</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/consult.jpg" alt="" width="700" height="470"></div><h3>Защита прав потребителей</h3><p>Взыскание стоимости некачественного товара, неустойки, штрафа и морального вреда. Возврат денег при недостоверной информации или просрочке. Отказ от товара дистанционно (Wildberries, Ozon, Yandex.Market). Споры по подряду и услугам.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/family.jpg" alt="" width="700" height="470"></div><h3>Семейные дела</h3><p>Взыскание и изменение алиментов, расторжение брака, лишение и ограничение родительских прав, оспаривание отцовства, определение места жительства ребёнка и порядка общения, алименты на нетрудоспособных членов семьи.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/books.jpg" alt="" width="700" height="470"></div><h3>Наследственные дела</h3><p>Восстановление срока принятия наследства, установление факта принятия, признание права собственности, оспаривание завещаний и долгов наследодателя, обязательная доля, раздел наследства, признание наследника недостойным.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/house.jpg" alt="" width="700" height="470"></div><h3>Жилищные споры</h3><p>Признание права собственности, вселение и выселение, снятие с регистрационного учёта, оспаривание начислений, раздел лицевых счетов, оспаривание решений собраний собственников, ТСЖ и УК, раздел жилья.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/construction.jpg" alt="" width="700" height="470"></div><h3>Споры с застройщиком (ДДУ)</h3><p>Взыскание неустойки, морального вреда и штрафа, признание права собственности на объект, оспаривание одностороннего акта, отказ от договора при просрочке, взыскание стоимости непереданной площади.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/car.jpg" alt="" width="700" height="470"></div><h3>Автотематика и ДТП</h3><p>Признание права собственности на авто, виндикация, оспаривание сделок и штрафов ГИБДД, защита от лишения прав, возмещение по ОСАГО и КАСКО, защита виновника ДТП, исключение авто из описи приставов.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/travel.jpg" alt="" width="700" height="470"></div><h3>Туризм</h3><p>Взыскание стоимости некачественной путёвки, морального вреда и штрафа, возврат денег с турагента при пороках договора, взыскание убытков за ненадлежащую информацию о маршруте и трансфере.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/land.jpg" alt="" width="700" height="470"></div><h3>Земельные споры, ДНП и СНТ</h3><p>Установление границ участков, раздел земли, определение порядка пользования, установление сервитута, выдел доли в натуре, оспаривание протоколов собраний садоводов и незаконных начислений.</p></div>
+    <div class="card reveal"><div class="ic"><img src="images/services/legaloffice.jpg" alt="" width="700" height="470"></div><h3>Защита чести и достоинства</h3><p>Признание сведений не соответствующими действительности, компенсация морального вреда за оскорбления в соцсетях и чатах, удаление порочащей информации, защита деловой репутации.</p></div>
     <div class="card reveal"><div class="ic"><img src="images/services/piggy.jpg" alt="" loading="lazy"></div><h3>Займы и кредитные договоры</h3><p>Взыскание суммы займа и процентов по расписке, оспаривание неустоек и штрафных санкций по кредитным договорам, оспаривание самих договоров займа.</p></div>
     <div class="card reveal"><div class="ic"><img src="images/services/injury.jpg" alt="" loading="lazy"></div><h3>Причинение вреда (деликт)</h3><p>Возмещение вреда здоровью и имуществу при ДТП, драках, падении льдин. Компенсации по потере кормильца, взыскание вреда при производственных травмах, компенсации участникам и родственникам СВО.</p></div>
     <div class="card reveal"><div class="ic"><img src="images/services/umbrella.jpg" alt="" loading="lazy"></div><h3>Страховые споры</h3><p>Выплаты, оспаривание и расчёты по страхованию. Возврат страховой премии, возмещение при заливах и пожарах, выплаты наследникам, защита от требований страховых компаний.</p></div>
@@ -559,10 +565,10 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
   <div class="gallery reveal">
     <p class="gallery-cap">Илья Викторович Антонов в СМИ и на телевидении</p>
     <div class="gallery-grid">
-      <a href="images/FotoOffice.webp" target="_blank" rel="noopener"><img src="images/FotoOffice.webp" alt="Илья Антонов в офисе ПЦ «Человек и Закон»" loading="lazy"></a>
-      <a href="images/fotoHome.webp" target="_blank" rel="noopener"><img src="images/fotoHome.webp" alt="Съёмка на телеканале Подмосковье 360" loading="lazy"></a>
-      <a href="images/fotoRussia.webp" target="_blank" rel="noopener"><img src="images/fotoRussia.webp" alt="Комментарий на телеканале Россия 24" loading="lazy"></a>
-      <a href="images/fotoMT.webp" target="_blank" rel="noopener"><img src="images/fotoMT.webp" alt="Передача «Минтранс» на Рен ТВ" loading="lazy"></a>
+      <a href="images/FotoOffice.jpg" target="_blank" rel="noopener"><picture><source srcset="images/FotoOffice.webp" type="image/webp"><img src="images/FotoOffice.jpg" alt="Илья Антонов в офисе ПЦ «Человек и Закон»" width="600" height="329"></picture></a>
+      <a href="images/fotoHome.jpg" target="_blank" rel="noopener"><picture><source srcset="images/fotoHome.webp" type="image/webp"><img src="images/fotoHome.jpg" alt="Съёмка на телеканале Подмосковье 360" width="280" height="180"></picture></a>
+      <a href="images/fotoRussia.jpg" target="_blank" rel="noopener"><picture><source srcset="images/fotoRussia.webp" type="image/webp"><img src="images/fotoRussia.jpg" alt="Комментарий на телеканале Россия 24" width="900" height="506"></picture></a>
+      <a href="images/fotoMT.jpg" target="_blank" rel="noopener"><picture><source srcset="images/fotoMT.webp" type="image/webp"><img src="images/fotoMT.jpg" alt="Передача «Минтранс» на Рен ТВ" width="900" height="506"></picture></a>
     </div>
   </div>
 </div></section>
