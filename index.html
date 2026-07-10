@@ -109,6 +109,7 @@ html{scroll-behavior:smooth}
 body{font-family:"Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
+picture{display:contents}
 .container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 h1,h2,h3,h4{font-family:"Georgia",serif;line-height:1.2;color:var(--navy)}
 section{padding:clamp(48px,7vw,76px) 0}
@@ -187,13 +188,13 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .cards{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 2px 18px;scrollbar-width:none;-ms-overflow-style:none}
 .cards::-webkit-scrollbar{display:none}
 .cards .reveal,.card.reveal{opacity:1;transform:none}
-.card{flex:0 0 280px;scroll-snap-align:start;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.22s;display:flex;flex-direction:column}
+.card{flex:0 0 380px;max-width:88vw;scroll-snap-align:start;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.22s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--gold-soft)}
-.card .ic{width:100%;height:140px;margin:0 0 14px;flex-shrink:0;overflow:hidden;background:var(--navy)}
+.card .ic{width:100%;height:clamp(210px,25vw,260px);margin:0 0 16px;flex-shrink:0;overflow:hidden;background:var(--navy)}
 .card .ic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
 .card:hover .ic img{transform:scale(1.05)}
-.card h3{font-size:17px;margin:0 22px 7px}
-.card p{font-size:13.5px;color:var(--muted);margin:0 22px 22px}
+.card h3{font-size:18px;margin:0 24px 8px}
+.card p{font-size:14px;color:var(--muted);margin:0 24px 24px}
 .card:nth-child(6n+1) .ic{background:linear-gradient(135deg,#243449,#3d597b)}
 .card:nth-child(6n+2) .ic{background:linear-gradient(135deg,#6a5220,#c8a047)}
 .card:nth-child(6n+3) .ic{background:linear-gradient(135deg,#254a43,#3f8577)}
@@ -321,13 +322,13 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .mobile-nav{display:none}
 
 @media(max-width:860px){
-  .hero .container{grid-template-columns:1fr;gap:26px}
+  .hero .container{grid-template-columns:1fr;gap:24px}
   .hero-copy{text-align:center}
   .hero h1,.hero .lead{margin-left:auto;margin-right:auto}
   .hero-form{margin-left:auto;margin-right:auto}
   .hero-form .row{justify-content:center}
   .hero-stats{justify-content:center;gap:24px 34px}
-  .hero-card{min-height:280px}
+  .hero-card{order:-1;min-height:340px}
   .hero-card .duo .a{width:72%}
   .hero-card .duo .b{width:62%}
 }
@@ -441,8 +442,14 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
   <div class="hero-card">
     <span class="name-chip">Виктор и Илья Антоновы<span>Адвокаты · уголовные и гражданские дела</span></span>
     <div class="duo">
-      <img class="a" src="images/ok.png" alt="Адвокат Виктор Павлович Антонов" width="1781" height="1414" fetchpriority="high">
-      <img class="b" src="images/i1.png" alt="Адвокат Илья Викторович Антонов" width="800" height="793" fetchpriority="high">
+      <picture>
+        <source srcset="images/ok.webp" type="image/webp">
+        <img class="a" src="images/ok.png" alt="Адвокат Виктор Павлович Антонов" width="900" height="715" fetchpriority="high">
+      </picture>
+      <picture>
+        <source srcset="images/i1.webp" type="image/webp">
+        <img class="b" src="images/i1.png" alt="Адвокат Илья Викторович Антонов" width="760" height="753" fetchpriority="high">
+      </picture>
     </div>
   </div>
 </div></section>
@@ -527,7 +534,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
   <h2 class="section-title reveal">Наши адвокаты</h2>
   <p class="section-sub reveal">Все услуги оказываются официально — по адвокатскому соглашению, оплата принимается по платёжным документам</p>
   <div class="lawyer reveal">
-    <div class="ph"><img src="images/ok.png" alt="Адвокат Виктор Павлович Антонов" width="300" height="400" loading="lazy" onerror="this.style.display='none';this.parentNode.innerHTML='👨‍⚖️'"></div>
+    <div class="ph"><picture><source srcset="images/ok.webp" type="image/webp"><img src="images/ok.png" alt="Адвокат Виктор Павлович Антонов" width="300" height="400" loading="lazy" onerror="this.style.display='none';this.parentNode.innerHTML='👨‍⚖️'"></picture></div>
     <div>
       <h3>Виктор Павлович Антонов</h3>
       <div class="role">Уголовные и административные дела</div>
@@ -538,7 +545,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
     </div>
   </div>
   <div class="lawyer rev reveal">
-    <div class="ph"><img src="images/i1.png" alt="Адвокат Илья Викторович Антонов" width="300" height="400" loading="lazy" onerror="this.style.display='none';this.parentNode.innerHTML='👨‍⚖️'"></div>
+    <div class="ph"><picture><source srcset="images/i1.webp" type="image/webp"><img src="images/i1.png" alt="Адвокат Илья Викторович Антонов" width="300" height="400" loading="lazy" onerror="this.style.display='none';this.parentNode.innerHTML='👨‍⚖️'"></picture></div>
     <div>
       <h3>Илья Викторович Антонов</h3>
       <div class="role">Гражданские и иные дела</div>
@@ -552,10 +559,10 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
   <div class="gallery reveal">
     <p class="gallery-cap">Илья Викторович Антонов в СМИ и на телевидении</p>
     <div class="gallery-grid">
-      <a href="images/FotoOffice.png" target="_blank" rel="noopener"><img src="images/FotoOffice.png" alt="Илья Антонов в офисе ПЦ «Человек и Закон»" loading="lazy"></a>
-      <a href="images/fotoHome.jpg" target="_blank" rel="noopener"><img src="images/fotoHome.jpg" alt="Съёмка на телеканале Подмосковье 360" loading="lazy"></a>
-      <a href="images/fotoRussia.jpg" target="_blank" rel="noopener"><img src="images/fotoRussia.jpg" alt="Комментарий на телеканале Россия 24" loading="lazy"></a>
-      <a href="images/fotoMT.jpg" target="_blank" rel="noopener"><img src="images/fotoMT.jpg" alt="Передача «Минтранс» на Рен ТВ" loading="lazy"></a>
+      <a href="images/FotoOffice.webp" target="_blank" rel="noopener"><img src="images/FotoOffice.webp" alt="Илья Антонов в офисе ПЦ «Человек и Закон»" loading="lazy"></a>
+      <a href="images/fotoHome.webp" target="_blank" rel="noopener"><img src="images/fotoHome.webp" alt="Съёмка на телеканале Подмосковье 360" loading="lazy"></a>
+      <a href="images/fotoRussia.webp" target="_blank" rel="noopener"><img src="images/fotoRussia.webp" alt="Комментарий на телеканале Россия 24" loading="lazy"></a>
+      <a href="images/fotoMT.webp" target="_blank" rel="noopener"><img src="images/fotoMT.webp" alt="Передача «Минтранс» на Рен ТВ" loading="lazy"></a>
     </div>
   </div>
 </div></section>
