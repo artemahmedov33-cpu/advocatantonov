@@ -1,0 +1,7 @@
+# Сайт живёт в подпапке проекта на GitHub Pages.
+# Поисковики читают robots.txt ТОЛЬКО из корня домена, поэтому этот файл
+# они не увидят. Он оставлен на случай переезда на собственный домен.
+User-agent: *
+Allow: /
+
+Sitemap: https://artemahmedov33-cpu.github.io/advocatantonov/sitemap.xml
