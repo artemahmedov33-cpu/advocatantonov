@@ -463,6 +463,7 @@ mark{background:rgba(200,160,71,.28);color:inherit;border-radius:2px;padding:0 1
   font-variant-numeric:tabular-nums;flex:0 0 auto;
 }
 .verd-link > .vl-size{margin-left:2px}
+.vl-label{flex:1 1 auto;min-width:0}
 
 .verd-link:hover .ar{transform:translateX(5px)}
 .cases-note{margin-top:var(--s6);text-align:center;font-size:13.5px;color:var(--ink-3);max-width:760px;margin-left:auto;margin-right:auto;line-height:1.6}
@@ -1136,6 +1137,21 @@ body.menu-open .burger span:nth-child(3){transform:translateY(-8px) rotate(-45de
     padding-inline:calc((100vw - var(--card)) / 2);
   }
   .card,.verd,.member{flex:0 0 var(--card);max-width:none;scroll-snap-align:center}
+
+  /* На телефоне карточка дела видна одна, и равнять их по самой высокой незачем:
+     абзац раздувался, ссылка на решение уезжала за край экрана. Отпускаем высоту
+     и убираем серые полоски, изображавшие текст документа, — шапка с типом акта,
+     судом, датой и результатом остаётся, она и есть доказательство. */
+  .verd-track{align-items:flex-start}
+  .verd-body{flex:0 0 auto}
+  .verd-body p{flex:0 0 auto}
+  .verd .doc-lines{display:none}
+  .verd .doc{padding-bottom:var(--s4)}
+  /* в списке инстанций на телефоне название суда съедало по две-три строки
+     на каждый акт; оставляем тип и дату — этого хватает, чтобы понять,
+     что это за документ. Полная подпись остаётся на широких экранах. */
+  .vl-court{display:none}
+  .verd-docs .verd-link{align-items:center}
   .dir{columns:1}
   .dir-wrap:not(.open) .dir{max-height:480px}
   .case-grid,.rev-cards{grid-template-columns:1fr}
