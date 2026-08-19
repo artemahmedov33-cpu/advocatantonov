@@ -1167,6 +1167,12 @@ body.menu-open .burger span:nth-child(3){transform:translateY(-8px) rotate(-45de
   .doc-type{font-size:14px}
   .chip{font-size:12.5px}
   .hero-card .name-chip span{font-size:11px}
+  /* на узком экране карточка ниже, фото прижато к низу — плашка сверху
+     упиралась в голову. Переносим её на пиджак, там ничего не закрывает. */
+  .hero-card .name-chip{
+    top:auto;bottom:var(--s4);left:var(--s4);right:auto;
+    max-width:calc(100% - var(--s4) * 2);
+  }
   .footer{font-size:15px}
   .fdisclaimer{font-size:13px}
 }
@@ -1182,7 +1188,7 @@ body.menu-open .burger span:nth-child(3){transform:translateY(-8px) rotate(-45de
   .head-actions{justify-content:center;width:100%;gap:var(--s4)}
   .social{width:44px;height:44px}
   .hero{padding-top:var(--s5)}
-  .hero-card .name-chip{top:var(--s4);left:var(--s4);font-size:13px;padding:var(--s2) var(--s3)}
+  .hero-card .name-chip{font-size:13px;padding:var(--s2) var(--s3)}
   .hero-card .name-chip span{font-size:10px}
   .hero-card .hc-badge{display:none}
   .trust .container{grid-template-columns:1fr}
